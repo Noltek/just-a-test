@@ -1,11 +1,13 @@
 package com.noltek.services.repository;
 
-import com.noltek.services.model.entity.User;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.noltek.services.model.User;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<User, Long> {
-    boolean existsByEmail(String email);
-    Optional<User> findByUsername(String username);
+@Repository
+public interface UserRepository extends CrudRepository<User, Long> {
+    Optional<User> findByEmail(String email);
+    Optional<User> findByVerificationCode(String verificationCode);
 }
