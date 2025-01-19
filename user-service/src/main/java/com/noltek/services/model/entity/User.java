@@ -1,5 +1,6 @@
-package com.noltek.services.model;
+package com.noltek.services.model.entity;
 
+import com.noltek.services.model.enums.Role;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -22,5 +23,5 @@ public class User {
     private String email;
 
     @Column(nullable = false)
-    private String role;
+    private Role role;
 }
